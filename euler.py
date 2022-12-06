@@ -1,3 +1,5 @@
+
+
 def project_euler_1():
     # If we list all the natural numbers below 10 that are multiples of 3 or 5, 
     # we get 3, 5, 6 and 9. The sum of these multiples is 23.
@@ -70,8 +72,29 @@ def project_euler_3():
             num2 -= 1
     
     return max
-        
-        
+
+def project_euler_4():       
+    # Store the target number in a variable
+    target = 600851475143
+
+    # Start with the smallest prime number, 2
+    factor = 2
+
+    # Keep incrementing the factor until it is greater than the target
+    while factor <= target:
+        # If the target is divisible by the current factor, divide it by the factor
+        # and store the result as the new target
+        if target % factor == 0:
+            target = target / factor
+
+        # If the target is not divisible by the current factor, increment the factor by 1
+        else:
+            factor += 1
+
+    # When the loop finishes, the current value of the factor variable is the largest
+    # prime factor of the target number
+    return factor
+
 def project_euler_5():
     """
     2520 is the smallest number that can be divided by each of the numbers from 1 to 10 
@@ -410,6 +433,7 @@ if __name__ == "__main__":
     print(f"Project Euler Problem #1: {project_euler_1()}")
     print(f"Project Euler Problem #2: {project_euler_2()}")
     print(f"Project Euler Problem #3: {project_euler_3()}")
+    print(f"Project Euler Problem #4: {project_euler_4()}")
     print(f"Project Euler Problem #5: {project_euler_5()}")
     print(f"Project Euler Problem #6: {project_euler_6()}")
     print(f"Project Euler Problem #13: {project_euler_13()}")
